@@ -17,7 +17,7 @@ const SearchInput = () => {
       <Input
         type="text"
         placeholder="Search"
-        className="border border-gray-300 px-3 py-1"
+        className="border border-pink-500 px-3 py-1 text-pink-500 placeholder:italic placeholder:text-pink-400"
         value={term}
         onChange={(e) => setTerm(e.target.value)}
       />
