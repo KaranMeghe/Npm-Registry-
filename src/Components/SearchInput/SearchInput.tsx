@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Input } from "../index";
+import { useNavigate } from "react-router-dom";
 
 const SearchInput = () => {
   const [term, setTerm] = useState<string>("");
+  const navigate = useNavigate(); //Programatic Navigation
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTerm("");
+    navigate(`/search?term=${term}`);
   };
 
   return (
