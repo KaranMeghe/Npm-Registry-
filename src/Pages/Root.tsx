@@ -3,10 +3,15 @@ import { Header } from "../Components";
 
 const Root = () => {
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <>
+      <header>
+        <div className="bg-gradient-to-r from-indigo-500 from-10% via-purple-500 via-30% to-pink-500 to-90% p-2"></div>
+        <Header />
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 };
 
