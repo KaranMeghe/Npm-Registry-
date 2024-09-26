@@ -1,6 +1,16 @@
 import { searchPackages } from "../../api/queries/searchPackages";
 
-export async function SearchLoader({ request }: { request: Request }) {
+import { PackageSummary } from "../../api/types/packageSummary";
+
+export interface SearchLoaderResult {
+  searchResults: PackageSummary[];
+}
+
+export async function SearchLoader({
+  request,
+}: {
+  request: Request;
+}): Promise<SearchLoaderResult> {
   const { searchParams } = new URL(request.url);
   const term = searchParams.get("term");
 
@@ -8,6 +18,5 @@ export async function SearchLoader({ request }: { request: Request }) {
     throw new Error("Search Term Must Be Provided");
   }
   const results = await searchPackages(term);
-  console.log(results);
   return { searchResults: results };
 }

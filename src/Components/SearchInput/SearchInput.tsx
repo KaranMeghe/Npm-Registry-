@@ -9,7 +9,7 @@ const SearchInput = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTerm("");
-    navigate(`/search?term=${term}`);
+    term && navigate(`/search?term=${term}`);
   };
 
   return (
