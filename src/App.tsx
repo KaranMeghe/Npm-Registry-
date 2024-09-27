@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root, HomePage, SearchPage, DetailsPage } from "./Pages";
+import { detailsLoader } from "./Pages/DetailsPage/detailsLoader";
 import { SearchLoader } from "./Pages/SearchPage/SearchLoader";
 
 const router = createBrowserRouter([
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/packages/:name",
         element: <DetailsPage />,
+        loader: detailsLoader,
       },
     ],
   },
